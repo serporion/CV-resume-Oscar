@@ -19,7 +19,7 @@ h2 {
 
 h3 {
     font-size: 1em;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
 }
 
 main { 
@@ -56,6 +56,95 @@ h1, h2 {
     margin-bottom: 0;
 }
 
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-wrap: nowrap;
+  margin-bottom: 0.5em;
+}
+
+.skill-item {
+  
+  
+  gap: 0.5em;
+  
+  margin-bottom: 0.5em;
+}
+
+
 #mainLeft {
     border-right: 1px solid lightgray;
+}
+
+@media print {
+  body {
+    color: black;
+    background: white;
+    font-size: 12pt;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+	 font-size: 30px;
+  }
+
+  header, section, article {
+    background: none !important;
+    box-shadow: none !important;
+    color: black !important;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  i {
+    display: none; /* oculta los iconos Font Awesome si no se imprimen bien */
+  }
+
+  #separa {
+    margin-top: 10rem;	
+  }
+
+  hr {
+    border: none;
+    background-color: black;
+    height: 1px;
+    margin: 1em 0;
+  }
+
+
+  main {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 1em;
+    margin: 0;
+  }
+
+  #mainLeft {
+    border-right: 1px solid gray;
+    padding-right: 0.5em;
+  }
+
+  #mainRight {
+    padding-left: 1em;
+  }
+
+  /* Evita que los enlaces impriman la URL al lado */
+  a[href]:after {
+    content: "";
+  }
+
+  /* Quita márgenes de impresión por defecto del navegador */
+  @page {
+    margin: 1cm;
+  }
+  
+  .contact-item .tamano {
+	  font-size: 14px !important;
+  }
 }
